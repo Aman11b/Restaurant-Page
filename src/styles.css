@@ -1,3 +1,342 @@
+/* ----------------------------- */
+/* custom properties */
+/* ------------------------------ */
+:root{
+
+    /* color */
+    --clr-1:194 100% 24%;
+    --clr-2:82 41% 95%;
+    --clr-3:18 74% 66%;
+    --clr-4:202 50% 65%;
+    --clr-5:210 100% 12%;
+    --ckr-6:263 100% 97%;
+
+    /* font-family */
+    --ff-cond: "Roboto Condensed", sans-serif;
+    --ff-flex: "Roboto Flex", sans-serif;
+
+    /* Font-sizes - consider reducing slightly or using scalable units */
+    --fs-900: 5rem ;
+    --fs-800: 4.5rem; 
+    --fs-700: 3.45rem; 
+    --fs-600: 3rem; 
+    --fs-500: 2.55rem; 
+    --fs-400: 2rem;  
+    --fs-300: 1.5rem; 
+    --fs-200: 1rem;
+}
+
+/* ----------------------------- */
+/* general reset function */
+/* ------------------------------ */
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+/* reset margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture{
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p{
+   font-weight: 400;
+}
+
+input,
+button,
+textarea,
+select{
+    font: inherit;
+    border: none;
+}
+
+/* set up the body */
 body{
-    background-color: antiquewhite;
+    font-family: var(--ff-flex);
+    font-size: var(--fs-200);
+    color: hsl(var(--clr-1));
+    line-height: 1.4;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    background-color: hsl(var(--clr-2));
+}
+button{
+    color: white;
+    background:hsl(var(--clr-1));
+    font-size: 1.5rem;
+    border-radius: 10px;
+    transition:transform 0.3s ease;
+}
+/* Button Hover Effect */
+button:hover {
+    transform: scale(1.05);
+}
+  
+/* home section */
+
+.home-content{
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-template-rows:  1fr 2fr 2fr;
+    gap: 10px;
+    max-height:100vh;
+    column-gap: 5rem;
+
+    grid-template-areas:
+    "home-heading home-heading ."
+    "btn content content";
+}
+.header{
+    grid-area: header;
+    font-size: var(--fs-300);
+    text-align: center;
+    place-self: end;
+    height: 10vh;
+    justify-content: center;
+    align-content: center;
+    margin-top: 3rem;
+    width: 70vw;
+    background: hsl(var(--clr-3) /0.7);
+    backdrop-filter: blur(50px);
+
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+nav{
+    display: flex;
+    gap: 3rem;
+    justify-self: flex-end;
+    margin-right: 2rem;
+}
+nav>button{
+    width: 7rem;
+    height: 3rem;
+}
+.home-heading{
+    grid-area: home-heading;
+    font-size: var(--fs-700);
+    height: 10vh;
+    padding-left: 5rem;
+    width: 40vw;
+    background-color: hsl(var(--clr-3)/0.8);
+    backdrop-filter: blur(10px);
+
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    margin-top: 2rem;
+
+}
+.order-btn{
+    grid-area: btn;
+    padding: 10px 20px;
+    font-size: 1.3em;
+    cursor: pointer;
+    height: 4em;
+    width: 7em;
+    margin-left: 70%;
+    margin-top: 20%;
+}
+.home-desc{
+    grid-area: content;
+    font-size: var(--fs-300);
+    line-height: 1.6;
+    padding: 10px;
+    margin-right: 1rem;
+    max-width: 45ch;
+    margin-left: 25%;
+
+}
+/* menu container */
+
+
+
+.menu-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:  1fr 1fr;
+    gap: 10px;
+    max-height:100vh;
+    column-gap: 5rem;
+
+    grid-template-areas:
+    "menu-header menu-header"
+    "m-content m-content";
+}
+
+.menu-header{
+    grid-area: menu-header;
+    font-size: var(--fs-700);
+    height: 10vh;
+    padding-left: 5rem;
+    width: 40vw;
+    background-color: hsl(var(--clr-3)/0.8);
+    backdrop-filter: blur(10px);
+
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    margin-top: 2rem;
+
+
+}
+.food-container {
+    grid-area: m-content;
+    gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 100vw;
+    margin: 0 7rem;
+    align-self: center;
+    justify-content: center;
+
+}
+
+.food-card {
+    background-color: hsl(var(--clr-3) / 0.3);
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-height: fit-content;
+    max-width: fit-content;
+    margin-top: 3rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    align-content: center;
+}
+
+.food-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+.food-card img {
+    width: 15rem;
+    height: 15rem;
+}
+
+.food-card h3 {
+    font-size: var(--fs-400);
+    color: hsl(var(--clr-1));
+}
+
+.food-card p {
+    font-size: var(--fs-300);
+    color: hsl(var(--clr-4));
+}
+
+.food-card .price {
+    font-size: var(--fs-400);
+    color: hsl(var(--clr-1));
+    font-weight: bold;
+}
+
+/* contact section */
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-template-rows:  1fr 2fr 2fr;
+    gap: 10px;
+    max-height: 60vh;
+    column-gap: 5rem;
+
+    grid-template-areas:
+    "contact-heading contact-heading ."
+    "image content .";
+}
+
+.contact-heading {
+    grid-area: contact-heading;
+    font-size: var(--fs-700);
+    height: 10vh;
+    padding-left: 5rem;
+    width: 40vw;
+    background-color: hsl(var(--clr-3) / 0.8);
+    backdrop-filter: blur(10px);
+
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    margin-top: 2rem;
+}
+
+.contact-header {
+    grid-area: contact-header;
+    font-size: var(--fs-300);
+    text-align: center;
+    place-self: end;
+    justify-content: center;
+    align-content: center;
+    margin-top: 3rem;
+    width: 70vw;
+    background: hsl(var(--clr-3) / 0.7);
+    backdrop-filter: blur(50px);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+nav {
+    display: flex;
+    gap: 3rem;
+    justify-self: flex-end;
+    margin-right: 4rem;
+}
+
+nav > button {
+    width: 7rem;
+    height: 3rem;
+}
+
+.image {
+    grid-area: image;
+    width: 200px;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-left: 5rem;
+}
+
+.contact-desc {
+    grid-area: content;
+    font-size: var(--fs-300);
+    line-height: 1.6;
+    margin-right: 1rem;
+    min-width: 50ch;
+    margin-left: 30%;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.social-icon {
+    width: 3rem;
+    height: 3rem;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
 }

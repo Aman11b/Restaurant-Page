@@ -3,7 +3,6 @@ import loadMenu from "./menu";
 import loadContent from "./contact";
 
 import "./styles.css";
-import "./normalizer.css";
 
 function initializeWebsite(){
     
