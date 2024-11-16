@@ -1,9 +1,9 @@
-function loadHome(){
+function loadContent(){
     const content=document.createElement("div");
     content.classList.add("contact-content");
 
     const heading=document.createElement("h1");
-    heading.textContent="Home";
+    heading.textContent="contact us";
 
     content.appendChild(heading);
 
@@ -11,4 +11,4 @@ function loadHome(){
     mainContent.appendChild(content);
 }
 
-export default loadHome;
+export default loadContent;
