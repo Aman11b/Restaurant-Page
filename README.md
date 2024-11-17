@@ -15,9 +15,9 @@ Designed to capture a classic cafe ambiance with a simple, visually appealing la
 Modular components for images, icons, and text, which can be easily updated as per requirements.
 
 ## 🛠️ Technologies Used
-# JavaScript: Core language for rendering dynamic content
-# Webpack: Module bundler for efficient asset management
-# HTML & CSS: Basic structure and styling
+JavaScript: Core language for rendering dynamic content
+Webpack: Module bundler for efficient asset management
+HTML & CSS: Basic structure and styling
 
 ## 🎯 Purpose
 This project is intended as a learning and implementation exercise, focusing on dynamic rendering using JavaScript and Webpack. The modular structure and dynamic content make it easy to maintain and expand.
